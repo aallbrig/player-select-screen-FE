@@ -1,39 +1,29 @@
 import React from 'react';
-import {render} from 'react-dom'
-import {Router, Route, IndexRoute, Link, History } from 'react-router'
+import {render} from 'react-dom';
 import {Grid, Row, Col} from 'react-bootstrap';
-import SelectCharacter from './selectCharacter.jsx';
-import Home from './home.jsx';
+import Navigation from './navigation.jsx';
 
-const App = React.createClass({
+export default React.createClass({
   render() {
     return (
-      <Grid>
-        <Row>
-          <Col xs={12}>
+      <div>
+        <Grid fluid style={{backgroundColor: '#222'}}>
+          <Grid>
             <div id='nav'>
-              <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/select_character'>Select Character</Link></li>
-              </ul>
+              <Navigation />
             </div>
-            <div id='content'>
-              {this.props.children}
-            </div>
-          </Col>
-        </Row>
-      </Grid>
+          </Grid>
+        </Grid>
+        <Grid>
+          <Row>
+            <Col xs={12}>
+              <div id='content'>
+                {this.props.children}
+              </div>
+            </Col>
+          </Row>
+        </Grid>
+      </div>
     );
   }
 });
-
-render((
-  <Router>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home}/>
-      <Route path='select_character' component={SelectCharacter}/>
-    </Route>
-  </Router>
-),  document.getElementById('app'));
-
-export default App;

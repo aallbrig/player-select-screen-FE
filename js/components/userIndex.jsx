@@ -7,9 +7,13 @@ export default React.createClass({
       <Grid>
         <Row>
           <Col xs={12}>
-            <h1>Select Character!</h1>
+            <h3>Manage Characters</h3>
             <div id='content'>
-              Please select character!
+              Manage User content.
+            </div>
+            <h3>Manage Spells</h3>
+            <div>
+              Manage Spells content.
             </div>
           </Col>
         </Row>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = React.createClass({
+export default React.createClass({
   render() {
     const message = 'Bundle.js works! Even bettererer now!';
     return (
@@ -12,5 +12,3 @@ const Home = React.createClass({
     )
   }
 });
-
-export default Home;
